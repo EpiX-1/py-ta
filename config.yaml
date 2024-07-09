@@ -1,0 +1,34 @@
+Stocks:
+  tickers: ['AAPL']
+  period:  '2y'
+  interval: '1h'
+
+Trader:
+  starting_budget: 5000
+  distance: 3
+  prominence: 1
+  buy: 20       
+  sell: 'max'
+  indicators: 
+    RSI:               ##changer ici pour décider sur quoi ca s'applique le RSI
+      period: 14    ##ajouter les paramètres pour trouver les symboles
+      coefficient: 1
+    Keltner:
+      period: 14
+      alpha: 3
+      coefficient: 1
+
+Signals:   ##to select peak from signal
+  std: 20
+  range_gaussian: 150
+  distance: 5
+  height: 0.01
+
+
+Tuner:    ##raytune config
+  num_samples: 200
+  max_concurrent_trials: 2
+  ressources:
+    cpu: 3
+    gpu: 0
+
